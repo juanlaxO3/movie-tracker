@@ -27,3 +27,4 @@ Thumbs.db
 *.sql
 backup_diario.ps1
 ORACLE_DEPLOY.md
+RENDER_DEPLOY.md
