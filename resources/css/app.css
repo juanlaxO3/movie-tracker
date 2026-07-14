@@ -1,0 +1,99 @@
+@import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'Figtree', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+}
+
+@keyframes fade-in {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-in-up {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+}
+
+@keyframes pulse-soft {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.5s ease-out both;
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out both;
+}
+
+.search-card:nth-child(1) { animation-delay: 0ms; }
+.search-card:nth-child(2) { animation-delay: 60ms; }
+.search-card:nth-child(3) { animation-delay: 120ms; }
+.search-card:nth-child(4) { animation-delay: 180ms; }
+.search-card:nth-child(5) { animation-delay: 240ms; }
+.search-card:nth-child(6) { animation-delay: 300ms; }
+.search-card:nth-child(7) { animation-delay: 360ms; }
+.search-card:nth-child(8) { animation-delay: 420ms; }
+.search-card:nth-child(9) { animation-delay: 480ms; }
+.search-card:nth-child(10) { animation-delay: 540ms; }
+.search-card:nth-child(11) { animation-delay: 600ms; }
+.search-card:nth-child(12) { animation-delay: 660ms; }
+
+.skeleton-box {
+    background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.06) 50%, transparent 100%);
+    background-size: 200% 100%;
+    animation: shimmer 1.5s infinite;
+}
+
+.sidebar-gradient {
+    background-image: linear-gradient(180deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.06) 100%);
+}
+
+.dark .sidebar-gradient {
+    background-image: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.06) 100%);
+}
+
+.sidebar-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-medium transition-all duration-200;
+}
+
+.sidebar-link-active {
+    @apply bg-amber-50 text-amber-700 dark:bg-amber-900/30 dark:text-amber-400 shadow-sm;
+}
+
+.sidebar-link-inactive {
+    @apply text-zinc-600 hover:bg-zinc-100 dark:text-zinc-400 dark:hover:bg-zinc-800/50;
+}
+
+.auth-card {
+    animation: fade-in-up 0.5s ease-out;
+}
+
+[x-cloak] {
+    display: none !important;
+}
+
+.slide-enter {
+    opacity: 0;
+    transform: translateX(-10px);
+}
+
+.slide-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: all 0.3s ease-out;
+}
