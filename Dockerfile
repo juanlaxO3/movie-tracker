@@ -34,4 +34,5 @@ CMD i=0; until php docker-fix-migrations.php 2>/dev/null && php artisan migrate 
     && php artisan config:cache \
     && php artisan route:cache \
     && php artisan view:cache \
+    && sed -i "s/80/${PORT:-80}/g" /etc/apache2/sites-available/000-default.conf /etc/apache2/ports.conf \
     && apache2-foreground
