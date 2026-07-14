@@ -26,3 +26,4 @@ Thumbs.db
 /storage/app/backups/
 *.sql
 backup_diario.ps1
+ORACLE_DEPLOY.md
